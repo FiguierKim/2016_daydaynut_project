@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-style-type" content="text/css">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<title>sliding benner</title>
+
+<style type="text/css">
+@charset "utf-8";
+body {margin:0;padding:0;background-color:#fff;}
+hr {display:none;clear:both;}
+img,fieldset {border:0 none;}
+h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend, p {margin:0;padding:0;}
+table {border-collapse:collapse;border:0 none;}
+caption,th {text-align:left;}
+ol,ul {list-style:none;}
+
+a:link { color:#3366cc; text-decoration:none; }
+a:visited { color:#3366cc; text-decoration:none; }
+a:active { color:#3366cc; text-decoration:none; }
+a:hover { color:#2850a2; text-decoration:none; }
+
+body,table,th,td,input,select,textarea,div {
+	font-family: "굴림","verdana"; 
+	font-size: 12px; 
+	color: #333; 
+	font-style: normal; 
+	line-height:12px; 
+	margin:0; 
+	word-spacing:-1pt; 
+	word-break:break-all;
+}
+#contentWrap #slider_num {
+	width:340px;
+	float:both;
+}
+#contentWrap #slider_num ul.ico {
+	float:right;
+}
+#contentWrap #slider_num ul.ico li{
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	padding-top: 2px;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: "Eurostile";
+	text-align: center;
+	display: inline;
+	background:url(img/rsm_bg_number_off.png);
+}
+#contentWrap #slider_num ul.ico li.on{background:url('img/rsm_bg_number_on.png') no-repeat;}
+#contentWrap #slider{position:relative;width:340px; height:120px; margin-top:8px; overflow:auto;}
+#contentWrap #slider ul{position:absolute; top:0; left:0;}
+#contentWrap #slider ul li{float:left; width:340px; height:120px;}
+
+</style>
+<script type="text/javascript" src="common.js"></script>
+</head>
+
+<body>
+<div id="contentWrap">
+	<div id="slider">
+		<ul>
+			<li><a href="../board_comp.jsp?id=9" target="_parent"><img src="img/comp_banner1.png" alt="1페이지" width="340" height="115"></a></li>
+			<li><a href="../board_comp.jsp?id=11" target="_parent"><img src="img/comp_banner2.png" alt="2페이지" width="340" height="115"></a></li>
+			<li><a href="../board_comp.jsp?id=12" target="_parent"><img src="img/comp_banner3.png" alt="3페이지" width="340" height="115"></a></li>
+            <li><a href="../board_comp.jsp?id=10" target="_parent"><img src="img/comp_banner4.png" alt="4페이지" width="340" height="115"></a></li>
+		</ul>
+	</div>
+    
+    <div id="slider_num">
+  	<ul id="pagination" class="ico">
+		<li onmouseover="slideshow.pos(0)">&nbsp;1&nbsp;</li>
+		<li onmouseover="slideshow.pos(1)">&nbsp;2&nbsp;</li>
+		<li onmouseover="slideshow.pos(2)">&nbsp;3&nbsp;</li> 
+      	<li onmouseover="slideshow.pos(3)">&nbsp;4&nbsp;</li> 
+	</ul>
+	</div>
+	
+	<script type="text/javascript">
+		var slideshow=new TINY.slider.slide('slideshow',{
+			id:'slider',
+			auto:3,
+			resume:true,
+			vertical:false,
+			navid:'pagination',
+			activeclass:'on',
+			position:0
+		});
+	</script>
+</div>
+</body>
+</html>
